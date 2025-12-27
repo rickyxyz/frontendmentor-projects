@@ -5,13 +5,15 @@
 }
 
 .visible {
+  opacity: 1 !important;
   visibility: visible !important;
-  display: block;
+  transform: translateY(0);
 }
 
 .hidden {
+  opacity: 0 !important;
   visibility: hidden !important;
-  display: none;
+  transform: translateY(-100%);
 }
 
 .header {
@@ -25,14 +27,13 @@
 }
 
 .header__mobile_overlay {
-  /* visibility: hidden; */
   z-index: -10;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100vw;
   background-color: var(--black);
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -45,6 +46,8 @@
   color: var(--white);
 
   padding: 1.6rem;
+
+  transition: transform 0.4s ease-in-out, opacity 0.3s ease, visibility 0.4s;
 }
 
 .header__mobile_overlay>ul {
@@ -52,6 +55,18 @@
   flex-direction: column;
   justify-content: center;
   gap: 0.6rem;
+}
+
+.header__mobile_overlay li {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  transition-delay: calc(var(--i) * 0.1s);
+}
+
+.header__mobile_overlay.visible li {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .header__logo {
