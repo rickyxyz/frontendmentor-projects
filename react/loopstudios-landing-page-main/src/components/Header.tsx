@@ -1,14 +1,28 @@
+import { useState } from "react";
 import useIsMobile from "../Hooks/useIsMobile";
 
 function Header() {
-  // let isOpen = false;
   const isMobile = useIsMobile();
+  const [isOpen, setIsOpen] = useState(false);
+
+  function toggleMenu() {
+    setIsOpen((p) => !p);
+  }
 
   return (
     <header className="header">
       <img src="/images/logo.svg" alt="LoopStudios" className="header__logo" />
-      <button className="header__menu_button">
-        <img src="/images/icon-hamburger.svg" alt="menu" />
+      <button className="header__menu_button" onClick={toggleMenu}>
+        <img
+          src="/images/icon-hamburger.svg"
+          alt="menu"
+          className={isOpen ? "hidden" : "visible"}
+        />
+        <img
+          src="/images/icon-close.svg"
+          alt="close"
+          className={!isOpen ? "hidden" : "visible"}
+        />
       </button>
       <nav
         className={
@@ -26,7 +40,9 @@ function Header() {
       </nav>
 
       {/* Mobile navigation overlay */}
-      <nav className="header__mobile_overlay">
+      <nav
+        className={`header__mobile_overlay ${!isOpen ? "hidden" : "visible"}`}
+      >
         <ul>
           <li>ABOUT</li>
           <li>CAREERS</li>

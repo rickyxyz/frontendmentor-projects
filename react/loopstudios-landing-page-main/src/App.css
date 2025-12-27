@@ -4,6 +4,16 @@
   gap: 6rem;
 }
 
+.visible {
+  visibility: visible !important;
+  display: block;
+}
+
+.hidden {
+  visibility: hidden !important;
+  display: none;
+}
+
 .header {
   display: flex;
   flex-direction: row;
@@ -11,10 +21,12 @@
   padding: 2.5rem 1.5rem;
   position: absolute;
   width: 100%;
+  z-index: 10;
 }
 
 .header__mobile_overlay {
-  visibility: hidden;
+  /* visibility: hidden; */
+  z-index: -10;
   top: 0;
   left: 0;
   height: 100vh;
@@ -22,6 +34,7 @@
   background-color: var(--black);
   position: absolute;
   display: flex;
+  justify-content: center;
   flex-direction: column;
 
   text-transform: uppercase;
@@ -31,14 +44,14 @@
   font-weight: 300;
   color: var(--white);
 
-  display: flex;
-  justify-content: center;
+  padding: 1.6rem;
 }
 
 .header__mobile_overlay>ul {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  justify-content: center;
+  gap: 0.6rem;
 }
 
 .header__logo {
