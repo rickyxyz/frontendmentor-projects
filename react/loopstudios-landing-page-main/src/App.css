@@ -121,8 +121,8 @@
 }
 
 .section__cards {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.45rem;
   width: 100%;
 }
@@ -133,6 +133,8 @@
   justify-content: flex-start;
   align-items: end;
   padding: 1.5rem;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%) center/cover,
+    var(--src) center/cover no-repeat;
 }
 
 .card__content h3 {
@@ -182,4 +184,11 @@
   justify-content: center;
   align-items: center;
   padding: 0.45rem 2.5rem;
+}
+
+@media (min-width: 600px) {
+  .section-hero {
+    background-image: url('/images/desktop/image-hero.jpg');
+    background-position: center;
+  }
 }
