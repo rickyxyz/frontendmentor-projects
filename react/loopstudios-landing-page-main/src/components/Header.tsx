@@ -1,7 +1,7 @@
 import useIsMobile from "../Hooks/useIsMobile";
 
 function Header() {
-  let isOpen = false;
+  // let isOpen = false;
   const isMobile = useIsMobile();
 
   return (
@@ -16,6 +16,17 @@ function Header() {
         }
         style={{ display: "none" }}
       >
+        <ul>
+          <li>ABOUT</li>
+          <li>CAREERS</li>
+          <li>EVENTS</li>
+          <li>PRODUCTS</li>
+          <li>SUPPORT</li>
+        </ul>
+      </nav>
+
+      {/* Mobile navigation overlay */}
+      <nav className="header__mobile_overlay">
         <ul>
           <li>ABOUT</li>
           <li>CAREERS</li>
