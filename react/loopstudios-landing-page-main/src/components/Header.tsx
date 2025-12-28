@@ -27,7 +27,7 @@ function Header() {
 
       {/* Desktop navigation */}
       {!isMobile && (
-        <nav>
+        <nav className="header__navigation-desktop">
           <ul>
             {navItems.map((item) => (
               <li key={item}>

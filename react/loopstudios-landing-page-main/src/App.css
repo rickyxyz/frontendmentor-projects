@@ -28,6 +28,36 @@
   text-transform: uppercase;
 }
 
+.header__navigation-desktop li {
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.header__navigation-desktop li:hover {
+  transform: scale(1.1);
+}
+
+.header__navigation-desktop li::after {
+  opacity: 0;
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 30%;
+  transform: translateX(-50%);
+  height: 2px;
+  display: block;
+  background-color: var(--white);
+  transform: translateX(-50%) scaleX(0);
+  transition: opcaity 0.2s ease-out, transform 0.3s ease-in;
+  transform-origin: center;
+}
+
+.header__navigation-desktop li:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) scaleX(1);
+}
+
 .header__mobile_overlay {
   z-index: -10;
   top: 0;
@@ -165,13 +195,41 @@
 }
 
 .card {
+  position: relative;
   min-height: 8.12rem;
   display: flex;
   justify-content: flex-start;
   align-items: end;
   padding: 1.5rem;
+  z-index: 1;
+  overflow: hidden;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%) center/cover,
     var(--src) center/cover no-repeat;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -10;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card h3 {
+  transition: color 0.3s ease;
+}
+
+.card:hover h3 {
+  color: var(--black);
 }
 
 .card__content h3 {
@@ -183,6 +241,7 @@
   width: 100%;
   padding: 3.8rem 0;
   background-color: var(--black);
+  color: var(--white);
 }
 
 .footer__logo {
@@ -194,6 +253,36 @@
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+}
+
+.footer li {
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.footer li:hover {
+  transform: scale(1.1);
+}
+
+.footer li::after {
+  opacity: 0;
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 30%;
+  transform: translateX(-50%);
+  height: 2px;
+  display: block;
+  background-color: var(--white);
+  transform: translateX(-50%) scaleX(0);
+  transition: opcaity 0.2s ease-out, transform 0.3s ease-in;
+  transform-origin: center;
+}
+
+.footer li:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) scaleX(1);
 }
 
 .footer__social {
@@ -227,6 +316,12 @@
   justify-content: center;
   align-items: center;
   padding: 0.45rem 2.5rem;
+  transition: background 0.4s ease-out, color 0.2s ease-in;
+}
+
+.button:hover {
+  background-color: var(--black);
+  color: var(--white);
 }
 
 @media (min-width: 600px) {
