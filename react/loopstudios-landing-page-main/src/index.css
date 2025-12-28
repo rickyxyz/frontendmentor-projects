@@ -14,15 +14,61 @@
   --black: hsl(0, 0%, 0%);
   --dark-gray: hsl(0, 0%, 55%);
   --very-dark-gray: hsl(0, 0%, 41%);
+
   font-size: 15px;
+
+  /* H1 Typography */
+  --h1-size: 2.65rem;
+  --h1-ls: 0.4px;
+  --h1-lh: 2.55rem;
+
+  /* H2 Typography */
+  --h2-size: 2.25rem;
+  --h2-ls: -1px;
+  --h2-lh: 2.1rem;
+
+  /* H3 Typography */
+  --h3-size: 1.6rem;
+  --h3-ls: -0.4px;
+  --h3-lh: 1.5rem;
+
+  /* P Typography */
+  --p-size: 1rem;
+  --p-ls: 0.2px;
+  --p-lh: 1.66;
+}
+
+@media (min-width: 1200px) {
+  :root {
+    /* H1 Typography */
+    --h1-size: 4.8rem;
+    --h1-ls: -0.5px;
+    --h1-lh: 0.98;
+
+    /* H2 Typography */
+    --h2-size: 3.3rem;
+    --h2-ls: -1.2px;
+    --h2-lh: 3.1rem;
+
+    /* H3 Typography */
+    --h3-size: 2rem;
+    --h3-ls: 0.5px;
+    --h3-lh: 1.1;
+
+    /* P Typography */
+    --p-size: 1rem;
+    --p-ls: 0.08px;
+    --p-lh: 1.65;
+  }
 }
 
 body {
   font-family: "Alata", sans-serif;
   font-weight: 400;
   font-style: normal;
-  line-height: 1.65;
-  letter-spacing: 0.2px;
+  line-height: var(--p-lh);
+  letter-spacing: var(--p-ls);
+  font-size: var(--p-size);
   color: var(--very-dark-gray);
   -webkit-font-smoothing: antialiased;
 }
@@ -35,7 +81,6 @@ button {
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
-  text-align: center;
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
   color: var(--black);
@@ -55,16 +100,6 @@ button,
 textarea,
 select {
   font: inherit;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
 }
 
 p {
@@ -101,19 +136,19 @@ button {
 }
 
 h1 {
-  font-size: 2.65rem;
-  letter-spacing: 0.4px;
-  line-height: 2.55rem;
+  font-size: var(--h1-size);
+  letter-spacing: var(--h1-ls);
+  line-height: var(--h1-lh);
 }
 
 h2 {
-  font-size: 2.25rem;
-  letter-spacing: -1px;
-  line-height: 2rem;
+  font-size: var(--h2-size);
+  letter-spacing: var(--h2-ls);
+  line-height: var(--h2-lh);
 }
 
 h3 {
-  font-size: 1.6rem;
-  line-height: 1.5rem;
-  letter-spacing: -0.4px;
+  font-size: var(--h3-size);
+  letter-spacing: var(--h3-ls);
+  line-height: var(--h3-lh);
 }
