@@ -370,7 +370,7 @@
 
   .section-hero {
     background: linear-gradient(hsla(0, 0%, 0%, 0.4), hsla(0, 0%, 0%, 0.4)),
-      url("/images/mobile/image-hero.jpg") center/cover no-repeat;
+      url("/images/desktop/image-hero.jpg") center/cover no-repeat;
   }
 
 }
