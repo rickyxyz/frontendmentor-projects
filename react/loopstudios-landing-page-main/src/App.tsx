@@ -5,8 +5,8 @@ import useIsMobile from "./Hooks/useIsMobile";
 
 const cardArray = [
   {
-    imgSrc: "images/mobile/image-deep-earth.jpg",
-    imgSrcDesktop: "images/desktop/image-deep-earth.jpg",
+    imgSrc: "./images/mobile/image-deep-earth.jpg",
+    imgSrcDesktop: "./images/desktop/image-deep-earth.jpg",
     children: (
       <h3>
         Deep
@@ -16,8 +16,8 @@ const cardArray = [
     ),
   },
   {
-    imgSrc: "images/mobile/image-night-arcade.jpg",
-    imgSrcDesktop: "images/desktop/image-night-arcade.jpg",
+    imgSrc: "./images/mobile/image-night-arcade.jpg",
+    imgSrcDesktop: "./images/desktop/image-night-arcade.jpg",
     children: (
       <h3>
         Night
@@ -27,8 +27,8 @@ const cardArray = [
     ),
   },
   {
-    imgSrc: "images/mobile/image-soccer-team.jpg",
-    imgSrcDesktop: "images/desktop/image-soccer-team.jpg",
+    imgSrc: "./images/mobile/image-soccer-team.jpg",
+    imgSrcDesktop: "./images/desktop/image-soccer-team.jpg",
     children: (
       <h3>
         Soccer
@@ -38,8 +38,8 @@ const cardArray = [
     ),
   },
   {
-    imgSrc: "images/mobile/image-grid.jpg",
-    imgSrcDesktop: "images/desktop/image-grid.jpg",
+    imgSrc: "./images/mobile/image-grid.jpg",
+    imgSrcDesktop: "./images/desktop/image-grid.jpg",
     children: (
       <h3>
         The
@@ -49,8 +49,8 @@ const cardArray = [
     ),
   },
   {
-    imgSrc: "images/mobile/image-from-above.jpg",
-    imgSrcDesktop: "images/desktop/image-from-above.jpg",
+    imgSrc: "./images/mobile/image-from-above.jpg",
+    imgSrcDesktop: "./images/desktop/image-from-above.jpg",
     children: (
       <h3>
         From up
@@ -60,8 +60,8 @@ const cardArray = [
     ),
   },
   {
-    imgSrc: "images/mobile/image-pocket-borealis.jpg",
-    imgSrcDesktop: "images/desktop/image-pocket-borealis.jpg",
+    imgSrc: "./images/mobile/image-pocket-borealis.jpg",
+    imgSrcDesktop: "./images/desktop/image-pocket-borealis.jpg",
     children: (
       <h3>
         Pocket
@@ -71,8 +71,8 @@ const cardArray = [
     ),
   },
   {
-    imgSrc: "images/mobile/image-curiosity.jpg",
-    imgSrcDesktop: "images/desktop/image-curiosity.jpg",
+    imgSrc: "./images/mobile/image-curiosity.jpg",
+    imgSrcDesktop: "./images/desktop/image-curiosity.jpg",
     children: (
       <h3>
         The
@@ -82,8 +82,8 @@ const cardArray = [
     ),
   },
   {
-    imgSrc: "images/mobile/image-fisheye.jpg",
-    imgSrcDesktop: "images/desktop/image-fisheye.jpg",
+    imgSrc: "./images/mobile/image-fisheye.jpg",
+    imgSrcDesktop: "./images/desktop/image-fisheye.jpg",
     children: (
       <h3>
         Make it
