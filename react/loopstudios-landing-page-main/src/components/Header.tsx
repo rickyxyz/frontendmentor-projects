@@ -17,11 +17,11 @@ function Header() {
 
   return (
     <header className="header">
-      <img src="/images/logo.svg" alt="LoopStudios" className="header__logo" />
+      <img src="images/logo.svg" alt="LoopStudios" className="header__logo" />
       {isMobile && (
         <button className="header__menu_button" onClick={toggleMenu}>
-          {!isOpen && <img src="/images/icon-hamburger.svg" alt="menu" />}
-          {isOpen && <img src="/images/icon-close.svg" alt="close" />}
+          {!isOpen && <img src="images/icon-hamburger.svg" alt="menu" />}
+          {isOpen && <img src="images/icon-close.svg" alt="close" />}
         </button>
       )}
 

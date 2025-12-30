@@ -128,7 +128,7 @@
 
 .section-hero {
   background: linear-gradient(hsla(0, 0%, 0%, 0.4), hsla(0, 0%, 0%, 0.4)),
-    url("/images/desktop/image-hero.jpg") center/cover no-repeat;
+    url("/images/mobile/image-hero.jpg") center/cover no-repeat;
 }
 
 .section__container {
@@ -367,6 +367,12 @@
   .section-about .section__content p {
     max-width: 83.5%;
   }
+
+  .section-hero {
+    background: linear-gradient(hsla(0, 0%, 0%, 0.4), hsla(0, 0%, 0%, 0.4)),
+      url("/images/mobile/image-hero.jpg") center/cover no-repeat;
+  }
+
 }
 
 @media (min-width: 1000px) {
