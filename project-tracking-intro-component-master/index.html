@@ -2,53 +2,73 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap"
-    rel="stylesheet">
-  <title>Frontend Mentor | Project tracking intro component</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Frontend Mentor | Project tracking intro component</title>
 </head>
 
 <!-- Add before pseudo to body for the rounded gray rectangle -->
 
 <body>
-  <header>
-    <nav>
-      <a href="#"><img src="./images/logo.svg" alt="Company logo"></a>
-      <ul>
-        <li><a href="#">Product</a></li>
-        <li><a href="#">Features</a></li>
-        <li><a href="#">Pricing</a></li>
-        <li><a href="#">Login</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <h1>
-      <span>
-        New
-      </span>
-      Monograph Dashboard
-    </h1>
-    <p>
-      Powerful insights into your team
-    </p>
-    <p>
-      Project planning and time tracking for agile teams
-    </p>
-    <button>
-      Schedule a demo
-    </button>
-    <button>
-      to see a live preview
-    </button>
-  </main>
-  <!-- <footer>
+    <header class="header">
+        <nav class="header__navigation" aria-label="Main Navigation">
+            <a class="header__homepage_link" href="#" aria-label="Website Homepage"><img src="./images/logo.svg"
+                    alt="Company logo"></a>
+            <div id="popover_target" popover>
+                <ul class="header__navigation_links" id="nav-menu">
+                    <li><a href="#">Product</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <hr>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </div>
+            <button aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu"
+                popovertarget="popover_target"><img src="./images/icon-hamburger.svg" alt="Navigation menu"></button>
+        </nav>
+    </header>
+    <main>
+        <section class="section-hero">
+            <img src="./images/illustration-devices.svg"
+                alt="Illustration of Monograph dashboard on a mobile device and a laptop." role="presentation">
+            <div class="section-hero__container">
+                <span class="section-hero__heading">
+                    <span class="badge">
+                        New
+                    </span>
+                    <h1>
+                        Monograph Dashboard
+                    </h1>
+                </span>
+                <span class="section-hero__content">
+                    <p class="section-hero__subtitle">
+                        Powerful insights into your team
+                    </p>
+                    <p>
+                        Project planning and time tracking
+                        <br />for agile teams
+                    </p>
+                    <span class="section-hero__cta">
+                        <button class="button">
+                            Schedule a demo
+                        </button>
+                        <span>
+                            to see a preview
+                        </span>
+                    </span>
+                </span>
+            </div>
+        </section>
+    </main>
+    <!-- <footer>
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
       Coded by <a href="#">Your Name Here</a>.
