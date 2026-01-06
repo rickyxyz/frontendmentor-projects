@@ -1,0 +1,448 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+.section-hero__cta > span, button, h1 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.section-hero__subtitle, .button, .badge, .header__navigation_links a {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.section-hero, .header {
+  padding: 1rem 2rem;
+}
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 4.5px;
+  font-size: 1rem;
+}
+
+p {
+  line-height: 1.4;
+}
+
+body {
+  padding-bottom: 3rem;
+  font-size: 1.125rem;
+}
+
+body::before {
+  content: "";
+  z-index: -10;
+  position: absolute;
+  height: 60.7vh;
+  border-bottom-left-radius: 3.8rem;
+  width: 50vw;
+  background-color: hsl(203, 31%, 95%);
+  right: 0;
+  top: 0;
+}
+
+.header {
+  padding-top: 2.4rem;
+  anchor-name: --navbar;
+}
+.header__navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__homepage_link > img {
+  height: 1.5rem;
+}
+.header__navigation_links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  min-width: 17.4rem;
+  padding: 1.2rem 1rem;
+}
+.header__navigation_links-desktop {
+  display: none;
+}
+.header__navigation_links li {
+  padding: 0.5rem 1rem;
+}
+.header__navigation_links hr {
+  margin: 0.3rem 0;
+  border: 0;
+  height: 1px;
+  border-top: solid 1px hsl(0, 0%, 88%);
+  width: 100%;
+}
+.header__navigation_links a {
+  color: hsl(230, 29%, 20%);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.125rem;
+  letter-spacing: 1px;
+  transition: text-decoration 0.2s ease-out;
+}
+.header__navigation_links a:hover {
+  text-decoration: underline;
+}
+.header__navigation_links li:last-child a {
+  color: hsl(250, 3%, 56%);
+}
+
+#popover_target {
+  position-anchor: --navbar;
+  position: absolute;
+  top: anchor(bottom);
+  justify-self: anchor-center;
+  transform: translateY(1.48rem);
+  box-shadow: -7px 4px 16px 1px hsla(0, 0%, 0%, 0.2);
+  margin: 0;
+  background-color: hsl(0, 0%, 100%);
+  opacity: 0;
+  transition: display 0.4s allow-discrete ease-out, overlay 0.4s allow-discrete ease-out, opacity 0.4s ease-out;
+}
+
+#popover_target:popover-open {
+  opacity: 1;
+}
+@starting-style {
+  #popover_target:popover-open {
+    opacity: 0;
+  }
+}
+
+.badge {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background-color: hsl(230, 29%, 20%);
+  color: hsl(0, 0%, 100%);
+  font-size: 1rem;
+  padding: 0.28rem 0.6rem;
+  border-radius: 1.12rem;
+}
+
+.button {
+  background-color: hsl(0, 100%, 68%);
+  color: hsl(0, 0%, 100%);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  padding: 0.85rem 1.5rem;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-out;
+}
+.button:hover {
+  background-color: hsl(0, 100%, 76%);
+}
+
+.section-hero {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.section-hero > img {
+  width: 162%;
+  transform: translateX(-4.65%);
+  margin: 1.5rem 0;
+}
+.section-hero__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+.section-hero__heading {
+  flex-wrap: wrap;
+  color: hsl(250, 3%, 56%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  row-gap: 0.5rem;
+}
+.section-hero__subtitle {
+  color: hsl(230, 29%, 20%);
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  line-height: 1;
+}
+.section-hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+.section-hero__cta {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 0.8rem;
+}
+.section-hero__cta > span {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  color: hsl(250, 3%, 56%);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 960px) {
+  body {
+    overflow-x: hidden;
+  }
+  header,
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body::before {
+    height: 39.5vh;
+    width: 49vw;
+  }
+  .button {
+    font-size: 1.02rem;
+    padding: 1rem 2rem;
+    letter-spacing: 1px;
+  }
+  .header__navigation,
+  .section-hero {
+    max-width: 1110px;
+    width: 100%;
+  }
+  .header {
+    padding-top: 3.97rem;
+  }
+  .header__homepage_link > img {
+    height: 2.07rem;
+  }
+  .header__navigation_links-desktop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2.5rem;
+  }
+  .header__navigation_links-desktop a {
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: hsl(230, 29%, 20%);
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: text-decoration-color 0.4s ease-out;
+    text-decoration-color: transparent;
+  }
+  .header__navigation_links-desktop a:hover {
+    text-decoration-color: hsl(230, 29%, 20%);
+  }
+  @starting-style {
+    .header__navigation_links-desktop a:hover {
+      text-decoration-color: transparent;
+    }
+  }
+  .header__navigation_links-desktop span {
+    margin: 0 0.5rem 0 0rem;
+    display: block;
+    background-color: hsl(0, 0%, 88%);
+    height: 6px;
+    width: 6px;
+    border-radius: 6px;
+  }
+  .header__navigation_links-desktop li:last-child a {
+    color: hsl(250, 3%, 56%);
+  }
+  .header__navigation #popover_target, .header__navigation > button {
+    display: none;
+  }
+  .section-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-direction: row-reverse;
+    padding: 8.95rem 0rem;
+  }
+  .section-hero > img {
+    transform: translate(-4.65%, -4.5rem);
+    position: absolute;
+    right: -21.6%;
+    width: 60rem;
+  }
+  .section-hero__container {
+    order: -1;
+  }
+  .section-hero__subtitle {
+    font-size: 4rem;
+  }
+  .section-hero__content {
+    gap: 2rem;
+  }
+  .section-hero__cta {
+    margin-top: 2rem;
+    gap: 1.5rem;
+  }
+  .section-hero__cta > span {
+    font-size: 1rem;
+    letter-spacing: 4.5px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
