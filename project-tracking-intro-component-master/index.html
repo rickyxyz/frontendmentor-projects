@@ -16,60 +16,55 @@
 </head>
 
 <body>
-    <header class="header">
-        <nav class="header__navigation" aria-label="Main Navigation">
+    <header class="container header">
+        <nav class="container__content header__navigation" aria-label="Main Navigation">
             <a class="header__homepage_link" href="#" aria-label="Website Homepage"><img src="./images/logo.svg"
                     alt="Company logo"></a>
-            <div id="popover_target" popover>
-                <ul class="header__navigation_links" id="nav-menu">
-                    <li><a href="#">Product</a></li>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <hr>
-                    <li><a href="#">Login</a></li>
-                </ul>
-            </div>
-            <ul class="header__navigation_links-desktop" id="nav-menu">
+            <ul id="popover_target" popover class="navigation__links" id="nav-menu">
                 <li><a href="#">Product</a></li>
                 <li><a href="#">Features</a></li>
                 <li><a href="#">Pricing</a></li>
-                <span></span>
+                <span class="navigation__divider"></span>
                 <li><a href="#">Login</a></li>
             </ul>
             <button aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu"
-                popovertarget="popover_target"><img src="./images/icon-hamburger.svg" alt="Navigation menu"></button>
+                popovertarget="popover_target" class="navigation__toggle"><img src="./images/icon-hamburger.svg"
+                    alt="Navigation menu"></button>
         </nav>
     </header>
     <main>
-        <section class="section-hero">
-            <img src="./images/illustration-devices.svg"
-                alt="Illustration of Monograph dashboard on a mobile device and a laptop." role="presentation">
-            <div class="section-hero__container">
-                <span class="section-hero__heading">
-                    <span class="badge">
-                        New
+        <section class="container">
+            <div class="container__content section-hero">
+                <img src="./images/illustration-devices.svg"
+                    alt="Illustration of Monograph dashboard on a mobile device and a laptop." class="image-hero"
+                    role="presentation">
+                <div class="section-hero__container">
+                    <span class="section-hero__heading">
+                        <span class="badge">
+                            New
+                        </span>
+                        <h1>
+                            Monograph Dashboard
+                        </h1>
                     </span>
-                    <h1>
-                        Monograph Dashboard
-                    </h1>
-                </span>
-                <span class="section-hero__content">
-                    <p class="section-hero__subtitle">
-                        Powerful insights into your team
-                    </p>
-                    <p>
-                        Project planning and time tracking
-                        <br />for agile teams
-                    </p>
-                    <span class="section-hero__cta">
-                        <button class="button">
-                            Schedule a demo
-                        </button>
-                        <span>
-                            to see a preview
+                    <span class="section-hero__content">
+                        <p class="section-hero__subtitle">
+                            Powerful insights into your team
+                        </p>
+                        <p>
+                            Project planning and time tracking
+                            <br />for agile teams
+                        </p>
+                        <span class="section-hero__cta">
+                            <button class="button">
+                                Schedule a demo
+                            </button>
+                            <span>
+                                to see a preview
+                            </span>
                         </span>
                     </span>
-                </span>
+                </div>
             </div>
         </section>
     </main>

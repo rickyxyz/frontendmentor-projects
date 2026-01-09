@@ -48,17 +48,57 @@ h1 {
 }
 
 p {
+  font-size: 1.125rem;
   line-height: 1.4;
+}
+
+a {
+  @extend %barlow-condensed-bold;
+  color: $blue-900;
+  text-transform: uppercase;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.4s ease-out;
+
+  &:hover {
+    text-decoration-color: $blue-900;
+  }
 }
 
 button {
   @extend %barlow-condensed-regular;
 }
 
+.button {
+  @extend %barlow-condensed-bold;
+  background-color: $red;
+  color: $white;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  padding: 0.85rem 1.5rem;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-out;
+
+  &:hover {
+    background-color: $red-hover;
+  }
+}
+
+.badge {
+  @extend %barlow-condensed-bold;
+  display: block;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  background-color: $blue-900;
+  color: $white;
+  font-size: 1rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 1rem;
+}
+
 body {
   @extend %barlow-regular;
   padding-bottom: 3rem;
-  font-size: 1.125rem;
 }
 
 body::before {
@@ -71,6 +111,23 @@ body::before {
   background-color: $blue-100;
   right: 0;
   top: 0;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.container {
+  &__content {
+    margin: auto 0;
+    max-width: 100%;
+    width: 100%;
+  }
 }
 
 .header {
@@ -89,6 +146,14 @@ body::before {
   }
 
   &__navigation_links {
+    &-desktop {
+      display: none;
+    }
+  }
+}
+
+.navigation {
+  &__links {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
@@ -97,39 +162,26 @@ body::before {
     min-width: 17.4rem;
     padding: 1.2rem 1rem;
 
-    &-desktop {
-      display: none;
-    }
-
     & li {
       padding: 0.5rem 1rem;
     }
 
-    & hr {
-      margin: 0.3rem 0;
-      border: 0;
-      height: 1px;
-      border-top: solid 1px $gray;
-      width: 100%;
-    }
-
     & a {
-      @extend %barlow-condensed-bold;
-      color: $blue-900;
-      text-transform: uppercase;
-      text-decoration: none;
       font-size: 1.125rem;
       letter-spacing: 1px;
-      transition: text-decoration 0.2s ease-out;
-
-      &:hover {
-        text-decoration: underline;
-      }
     }
 
     & li:last-child a {
       color: $dark-gray;
     }
+  }
+
+  &__divider {
+    margin: 0.3rem 0;
+    border: 0;
+    height: 1px;
+    border-top: solid 1px $gray;
+    width: 100%;
   }
 }
 
@@ -157,33 +209,6 @@ body::before {
   }
 }
 
-.badge {
-  @extend %barlow-condensed-bold;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  background-color: $blue-900;
-  color: $white;
-  font-size: 1rem;
-  padding: 0.28rem 0.6rem;
-  border-radius: 1.12rem;
-}
-
-.button {
-  @extend %barlow-condensed-bold;
-  background-color: $red;
-  color: $white;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 1.5px;
-  padding: 0.85rem 1.5rem;
-  border-radius: 5px;
-  transition: background-color 0.2s ease-out;
-
-  &:hover {
-    background-color: $red-hover;
-  }
-}
-
 .section-hero {
   @extend %section_padding;
   overflow-x: hidden;
@@ -191,7 +216,7 @@ body::before {
   flex-direction: column;
   gap: 4rem;
 
-  & > img {
+  .image-hero {
     width: 162%;
     transform: translateX(-4.65%);
     margin: 1.5rem 0;
@@ -246,15 +271,6 @@ body::before {
   }
 }
 
-.attribution {
-  font-size: 11px;
-  text-align: center;
-}
-
-.attribution a {
-  color: hsl(228, 45%, 44%);
-}
-
 @media (min-width: $layout-breakpoint-small) {
   body {
     overflow-x: hidden;
@@ -285,66 +301,60 @@ body::before {
   }
 
   .header {
-    padding-top: 3.97rem;
+    padding-top: 2.8rem;
 
     &__homepage_link > img {
       height: 2.07rem;
     }
+  }
 
-    &__navigation {
-      &_links-desktop {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 2.5rem;
-        & a {
-          font-family: "Barlow Condensed", sans-serif;
-          font-weight: 700;
-          font-style: normal;
-          color: $blue-900;
-          text-transform: uppercase;
-          font-size: 1rem;
-          letter-spacing: 0.5px;
-          transition: text-decoration-color 0.4s ease-out;
-          text-decoration-color: transparent;
+  .navigation {
+    &__toggle {
+      display: none;
+      visibility: hidden;
+    }
 
-          &:hover {
-            text-decoration-color: $blue-900;
+    &__divider {
+      height: 5px;
+      width: 5px;
+      border-radius: 5px;
+      background-color: $dark-gray;
+      margin: 0 1.3rem 0 1rem;
+    }
 
-            @starting-style {
-              text-decoration-color: transparent;
-            }
-          }
-        }
-
-        & span {
-          margin: 0 0.5rem 0 0rem;
-          display: block;
-          background-color: $gray;
-          height: 6px;
-          width: 6px;
-          border-radius: 6px;
-        }
-
-        & li:last-child a {
-          color: $dark-gray;
-        }
+    &__links {
+      padding-right: 0;
+      & a {
+        font-size: 1rem;
+        letter-spacing: 0.5px;
       }
 
-      #popover_target,
-      & > button {
-        display: none;
+      & li:last-child {
+        padding-right: 0;
       }
     }
+  }
+
+  #popover_target,
+  #popover_target:popover-open {
+    transform: none;
+    box-shadow: none;
+    background-color: transparent;
+    opacity: 1;
+    flex-direction: row;
+    position: static;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
   }
 
   .section-hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
     flex-direction: row-reverse;
-    padding: 8.95rem 0rem;
+    padding: 7.9rem 0rem;
 
-    > img {
+    .image-hero {
       transform: translate(-4.65%, -4.5rem);
       position: absolute;
       right: -21.6%;
