@@ -13,6 +13,12 @@
         rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <title>Frontend Mentor | Project tracking intro component</title>
+
+    <script type="module">
+        if (!("anchorName" in document.documentElement.style)) {
+            import("https://unpkg.com/@oddbird/css-anchor-positioning");
+        }
+    </script>
 </head>
 
 <body>
@@ -24,20 +30,20 @@
                 <li><a href="#">Product</a></li>
                 <li><a href="#">Features</a></li>
                 <li><a href="#">Pricing</a></li>
-                <span class="navigation__divider"></span>
+                <li aria-hidden="true" class="navigation__links_divider">
+                    <span class="navigation__divider"></span>
+                </li>
                 <li><a href="#">Login</a></li>
             </ul>
             <button aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu"
                 popovertarget="popover_target" class="navigation__toggle"><img src="./images/icon-hamburger.svg"
-                    alt="Navigation menu"></button>
+                    alt=""></button>
         </nav>
     </header>
     <main>
         <section class="container">
             <div class="container__content section-hero">
-                <img src="./images/illustration-devices.svg"
-                    alt="Illustration of Monograph dashboard on a mobile device and a laptop." class="image-hero"
-                    role="presentation">
+                <img src="./images/illustration-devices.svg" alt="" class="image-hero" role="presentation">
                 <div class="section-hero__container">
                     <span class="section-hero__heading">
                         <span class="badge">
