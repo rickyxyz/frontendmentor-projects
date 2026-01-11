@@ -116,6 +116,7 @@ This is just probably something I had difficulty because I haven't been doing th
 
 - [Frontend Mentor: Introduction to web accessibility](https://www.frontendmentor.io/learning-paths/introduction-to-web-accessibility-mXu-9PHVsd) - This Frontend Mentor learning path is where I look for most of the links for web accessibility.
 - [CSS Popover + Anchor Positioning is Magical (Video by Kevin Powell)](https://www.youtube.com/watch?v=DNXEORSk4GU) - This is where I learned how to use the popover API.
+- [Popover Polyfill](https://github.com/oddbird/css-anchor-positioning) - This is the library I put on this project to add popover support for older browser.
 
 ## Author
 
