@@ -53,15 +53,64 @@ Users should be able to:
 #### Accessibility & ARIA attribute usage.
 
 For this project, I tried to focus on learning accessibility and ARIA attributes.
+I learned about `aria-expanded` to indicate if a control element is expanded or not. `aria-live` to indicate region that is updated live. Also learned that the best approach to accessibility is to try not to use ARIA, instead to use native elements.
 
-Tried HTML new popover API
-Take care of the "in-between" states too
+#### Tried HTML new popover API and learned anchoring
+
+> I just learned that modal and popup are not the same (well, semantically)
+
+The new popover API is great, no need for JavaScript to create a simple tooltip or popup menu. The simplest code is just like below.
+
+```HTML
+<button popovertarget="mypopover">Toggle the popover</button>
+<div id="mypopover" popover>Popover content</div>
+```
+
+What I think is the most interesting is how you can style the popover using CSS to create responsive menu. So no more duplication for mobile and desktop navigation or removing and adding DOM nodes on the fly.
+
+```CSS
+#popover_target {
+  ...
+}
+#popover_target:popover-open {
+  opacity: 1;
+
+  @starting-style {
+    opacity: 0;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  #popover_target,
+  #popover_target:popover-open {
+    opacity: 1;
+  }
+}
+```
+
+There is also the new anchor attribute. For absolute-ly positioned elements you used to be only able to 'anchor' them to the nearest relatively positioned parent. But with anchor you can arbitralily position the 'anchor' the element.
+
+```CSS
+.header {
+  anchor-name: --navbar;
+}
+
+#popover_target {
+  position-anchor: --navbar;
+  position: absolute;
+  top: anchor(bottom);
+}
+```
+
+#### Take care of the "in-between" states too
+
+This is just probably something I had difficulty because I haven't been doing this in a while, but I had difficulty trying to position the hero image responsively. For next time, I should keep a keen eye for sizes beyond mobile and desktop, like tablet and widescreen devices (since tablets are becoming more powerful, and widescreen seem to be more common).
 
 ### Continued development
 
-Look into more modern CSS selector
-Look into CSS positioning techniques
-Look into more ARIA attributes
+- Look into more modern CSS selector
+- Look into CSS positioning techniques
+- Look into more ARIA attributes
 
 ### Useful resources
 
