@@ -52,6 +52,50 @@
       list-style: none;
     }
 
+    summary {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    summary::marker {
+      content: "";
+      display: none;
+    }
+
+    summary::after {
+      content: "";
+      display: block;
+      background-image: url("./assets/images/icon-plus.svg");
+      background-size: 1rem;
+      width: 1rem;
+      height: 1rem;
+      margin-left: 12px;
+    }
+
+    details {
+      interpolate-size: allow-keywords;
+    }
+
+    details::details-content {
+      block-size: 0;
+
+      transition: content-visibility, block-size;
+      transition-duration: 400ms;
+
+      transition-behavior: allow-discrete;
+      overflow: hidden;
+    }
+
+    details[open]::details-content {
+      block-size: auto;
+    }
+
+    details[open] summary::after {
+      background-image: url('./assets/images/icon-minus.svg');
+    }
+
     .attribution {
       font-size: 11px;
       text-align: center;
