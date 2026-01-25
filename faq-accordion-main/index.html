@@ -4,15 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
-
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
 
   <title>Frontend Mentor | FAQ accordion</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    /* For style try to use a mix of tailwind-like utility classes and see what works */
     @font-face {
       font-family: "Work Sans";
       src: url("./assets/fonts/WorkSans-VariableFont_wght.ttf");
@@ -45,7 +41,10 @@
       font-optical-sizing: auto;
       font-weight: 400;
       font-style: normal;
-      line-height: 1;
+      line-height: 1.2;
+      height: 100vh;
+
+      background: no-repeat top/101% url('./assets/images/background-pattern-mobile.svg'), var(--purple-100);
     }
 
     ul {
@@ -54,9 +53,16 @@
 
     summary {
       list-style: none;
-      display: flex;
+      display: grid;
+      grid-template-columns: auto 2rem;
+      gap: 1rem;
       align-items: center;
       cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      line-height: 1.2;
+      letter-spacing: 0px;
+      color: var(--purple-950);
     }
 
     summary::marker {
@@ -68,32 +74,89 @@
       content: "";
       display: block;
       background-image: url("./assets/images/icon-plus.svg");
-      background-size: 1rem;
-      width: 1rem;
-      height: 1rem;
-      margin-left: 12px;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 2rem;
+      height: 2rem;
     }
 
     details {
       interpolate-size: allow-keywords;
+      font-weight: 400;
+      color: var(--purple-600);
+      display: flex;
+      flex-direction: column;
+      font-size: 0.9rem;
+      letter-spacing: -0.2px;
+      line-height: 1.45;
     }
 
     details::details-content {
       block-size: 0;
 
-      transition: content-visibility, block-size;
+      transition: content-visibility, block-size, margin;
       transition-duration: 400ms;
 
       transition-behavior: allow-discrete;
       overflow: hidden;
+      margin: 0.6rem 0;
     }
 
     details[open]::details-content {
       block-size: auto;
+      margin: 1.5rem 0 1.3rem 0;
     }
 
     details[open] summary::after {
       background-image: url('./assets/images/icon-minus.svg');
+    }
+
+    .container {
+      height: 100%;
+      display: flex;
+      justify-content: flex-start;
+      padding: 1.5rem;
+    }
+
+    .card {
+      height: min-content;
+      background-color: var(--white);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 37%;
+    }
+
+    .card__heading {
+      display: flex;
+      font-size: 2rem;
+      font-weight: 700;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .card__heading::before {
+      content: '';
+      display: block;
+      height: 1.5rem;
+      width: 1.5rem;
+      background: no-repeat center/cover url('./assets/images/icon-star.svg');
+    }
+
+    ul.accordions {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    ul.accordions li:not(:last-child) {
+      border-bottom: solid 1px var(--purple-100);
+    }
+
+    ul.accordions li:last-child details::details-content {
+      margin: 0;
     }
 
     .attribution {
@@ -108,17 +171,14 @@
 </head>
 
 <body>
-  <!-- For body content focus on accessibility features -->
-  <div>
-    <main>
-      <span>
-        <h1>
-          FAQs
-        </h1>
-      </span>
-      <ul>
+  <div class="container">
+    <main class="card">
+      <h1 class="card__heading">
+        FAQs
+      </h1>
+      <ul class="accordions">
         <li>
-          <details>
+          <details name="accordion" open>
             <summary>
               What is Frontend Mentor, and how will it help me?
             </summary>
@@ -128,7 +188,7 @@
           </details>
         </li>
         <li>
-          <details>
+          <details name="accordion">
             <summary>
               Is Frontend Mentor free?
             </summary>
@@ -137,7 +197,7 @@
           </details>
         </li>
         <li>
-          <details>
+          <details name="accordion">
             <summary>
               Can I use Frontend Mentor projects in my portfolio?
             </summary>
@@ -146,9 +206,9 @@
           </details>
         </li>
         <li>
-          <details>
+          <details name="accordion">
             <summary>
-              How can I get help if I'm stuck on a Frontend Mentor challenge?
+              How can I get help if I'm stuck on a challenge?
             </summary>
             The best place to get help is inside Frontend Mentor's Discord community. There's a help
             channel where you can ask questions and seek support from other community members.
@@ -160,7 +220,7 @@
 
   <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://www.github.com/rickyxyz" target="_blank">@rickxyz</a>.
   </div> -->
 </body>
 
