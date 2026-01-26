@@ -112,7 +112,7 @@
     }
 
     .container {
-      height: 100%;
+      min-height: 100%;
       display: flex;
       justify-content: flex-start;
       padding: 1.5rem;
@@ -127,6 +127,9 @@
       flex-direction: column;
       gap: 1.5rem;
       margin-top: 37%;
+      -webkit-box-shadow: 1px 2px 10px 6px rgb(117 75 143 / 11%);
+      -moz-box-shadow: 1px 2px 10px 6px rgb(117 75 143 / 11%);
+      box-shadow: 1px 2px 10px 6px rgb(117 75 143 / 11%);
     }
 
     .card__heading {
@@ -159,6 +162,10 @@
       margin: 0;
     }
 
+    ul.accordions li:last-child details[open]::details-content {
+      margin: 1.5rem 0 0 0;
+    }
+
     .attribution {
       font-size: 11px;
       text-align: center;
@@ -166,6 +173,62 @@
 
     .attribution a {
       color: hsl(228, 45%, 44%);
+    }
+
+    @media screen and (min-width: 900px) {
+      body {
+        background: no-repeat top/100% url('./assets/images/background-pattern-desktop.svg'), var(--purple-100);
+      }
+
+      summary {
+        font-size: 1.1rem;
+        letter-spacing: 0.2px;
+      }
+
+      details {
+        font-size: 1rem;
+        letter-spacing: 0px;
+      }
+
+      .container {
+        padding-top: 10.5rem;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      .card {
+        margin: 0;
+        max-width: 600px;
+        border-radius: 1rem;
+        padding: 2.5rem;
+        gap: 2rem;
+      }
+
+      .card__heading {
+        font-size: 3.5rem;
+        gap: 1.5rem;
+      }
+
+      .card__heading::before {
+        height: 2.55rem;
+        width: 2.55rem;
+      }
+
+      details::details-content {
+        margin: 0.8rem 0;
+      }
+
+      details[open]::details-content {
+        margin: 1.5rem 0 1.8rem 0;
+      }
+
+      ul.accordions li:last-child details::details-content {
+        margin: 0;
+      }
+
+      ul.accordions li:last-child details[open]::details-content {
+        margin: 1.5rem 0 0 0;
+      }
     }
   </style>
 </head>
@@ -178,7 +241,7 @@
       </h1>
       <ul class="accordions">
         <li>
-          <details name="accordion" open>
+          <details open>
             <summary>
               What is Frontend Mentor, and how will it help me?
             </summary>
@@ -188,7 +251,7 @@
           </details>
         </li>
         <li>
-          <details name="accordion">
+          <details>
             <summary>
               Is Frontend Mentor free?
             </summary>
@@ -197,7 +260,7 @@
           </details>
         </li>
         <li>
-          <details name="accordion">
+          <details>
             <summary>
               Can I use Frontend Mentor projects in my portfolio?
             </summary>
@@ -206,7 +269,7 @@
           </details>
         </li>
         <li>
-          <details name="accordion">
+          <details>
             <summary>
               How can I get help if I'm stuck on a challenge?
             </summary>
